@@ -3,189 +3,139 @@
 // Author: Willian Francisco
 // Date: 8/30/23
 // Class: COP 3223, Professor Parra
-// Purpose:
+// Purpose: create different functions and use them to avoid
+// repeating lines of code.
 //
+// Input: x1, x2, y1, y2
 //
-//
-// Input: 
-//
-// Output:
+// Output: Three lines of output representing the values and
+// calculation made in the function.
 // //********************************************************
 
 #include <stdio.h>
 #include <math.h>
 
-// define PI as instructed
+// define PI as instructed.
 #define PI 3.14
 
-// Function for calculating width
-int main(int argc, char **argv) {
+// Bonus function, asks for user input.
+double askForUserInput() {
 
-    calculateDistance();
-    calculatePerimeter();
-    calculateArea();
-    calculateWidth();
-    calculateHeight();
-    askForUserInput();
+    // state variables.
+	double x1, x2, y1, y2;
 
+	// printf statements to ask the user for the value.
+    // scanf statements to get the values.
+	printf("Input value for x1: ");
+	scanf("%lf", &x1);
+	printf("Input value for x2: ");
+	scanf("%lf", &x2);
+	printf("Input value for y1: ");
+	scanf("%lf", &y1);
+	printf("Input value for y2: ");
+	scanf("%lf", &y2);
 
-    return 0;
+    // Prints the first line 
+	printf("Point #1 entered: x1 = %lf y1 = %lf \n", x1, y1);
+
+	// Scanf and printf statements for point #2
+	printf("Point #2 entered: x2 = %lf y2 = %lf \n", x2, y2);
+	
+	double user_input = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+
+	return user_input;
 
 }
 
 // Function for calculating distance
-double calculateDistance() {  
+double calculateDistance() {
 
-    // Point #1 variables
-    int x1 = 1;
-    int x2 = 1;
+	// Point #1 variables
+	double x1, x2, y1, y2;
 
-    // Point #2 variables
-    int y1 = 2;
-    int y2 = 2;
+	double distance = askForUserInput();
 
-    // Scanf and printf statements for point #1
-    scanf("%d %d", &x1, &y1);
-    printf("Point #1 entered: x1 = %d y1 = %d \n", x1, y1);
-    
-    // Scanf and printf statements for point #2
-    scanf("%d %d", &x2, &y2);
-    printf("Point #2 entered: x2 = %d y2 = %d \n", x2, y2);
+	// Define Distance variable and print statement for distance.
+	printf("The distance between the two points is %f\n", distance);
 
-    // Define Distance variable and print statement for distance.
-    double distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
-    printf("The distance between the two points is %f\n", distance);
-
-    return distance;
+	return distance;
 }
 
-// Function for calculating perimeter
-double calculatePerimeter() {
 
-    int width = 0;
-    int height = 0;
-    calculateWidth();
-    calculateHeight();
-    double difficulty = 4.0;
-
-    // Point #1 variables
-    int x1 = 1;
-    int x2 = 1;
-
-    // Point #2 variables
-    int y1 = 2;
-    int y2 = 2;
-
-    scanf("%d %d", &x1, &y1);
-    printf("Point #1 entered: x1 = %d y1 = %d \n", x1, y1);
-    
-    // Scanf and printf statements for point #2
-    scanf("%d %d", &x2, &y2);
-    printf("Point #2 entered: x2 = %d y2 = %d \n", x2, y2);
-
-    // not yet done
-    double perimeter = 2 * squirt(width + height);
-    printf("The permeter of the city encompassed by your request is %f\n", perimeter);
-
-    return difficulty;
-}
-
-// Function for calculating area
-double calculateArea() {
-
-    int width = 0;
-    int height = 0;
-    calculateWidth();
-    calculateHeight();
-    double difficulty = 4.0;
-
-    // Point #1 variables
-    int x1 = 1;
-    int x2 = 1;
-
-    // Point #2 variables
-    int y1 = 2;
-    int y2 = 2;
-
-    // line 1
-    scanf("%d %d", &x1, &y1);
-    printf("Point #1 entered: x1 = %d y1 = %d \n", x1, y1);
-    
-    // Scanf and printf statements for point #2
-    scanf("%d %d", &x2, &y2);
-    printf("Point #2 entered: x2 = %d y2 = %d \n", x2, y2);
-
-    // line 3
-    double area = (width * height);
-    printf("The area of the city encompassed by your request is %f\n", area);
-
-    return difficulty;
-}
 
 // Function for calculating Width
 double calculateWidth() {
 
-    double difficulty = 4.0;
 
-    // Point #1 variables
-    int x1 = 1;
-    int x2 = 1;
-
-    // Point #2 variables
-    int y1 = 2;
-    int y2 = 2;
-
-    // line 1
-    scanf("%d %d", &x1, &y1);
-    printf("Point #1 entered: x1 = %d y1 = %d \n", x1, y1);
+    double x1, x2, y1, y2;
     
-    // Scanf and printf statements for point #2
-    scanf("%d %d", &x2, &y2);
-    printf("Point #2 entered: x2 = %d y2 = %d \n", x2, y2);
+	double difficulty = 4.0;
+	double distance = askForUserInput();
 
-    // line 3
-    double width = (x2 - x1);
-    printf("The width of the city encompassed by your request is %f\n", width);
+	// line 3
+	int width = distance;
+	printf("The width of the city encompassed by your request is %d\n", width);
 
 
-    return difficulty; 
+	return difficulty;
 
 }
 
 // Function for calculating height
 double calculateHeight() {
 
-    double difficulty = 4.0;
 
-    // Point #1 variables
-    int x1 = 1;
-    int x2 = 1;
+    double x1, x2, y1, y2;
 
-    // Point #2 variables
-    int y1 = 2;
-    int y2 = 2;
+	double difficulty = 4.0;
+	double distance = askForUserInput();
 
-    // line 1
-    scanf("%d %d", &x1, &y1);
-    printf("Point #1 entered: x1 = %d y1 = %d \n", x1, y1);
-    
-    // Scanf and printf statements for point #2
-    scanf("%d %d", &x2, &y2);
-    printf("Point #2 entered: x2 = %d y2 = %d \n", x2, y2);
+	// line 3
+	int height = distance;
+	printf("The height of the city encompassed by your request is %d\n", height);
 
-    // line 3
-    double height = (y2 - y1);
-    printf("The height of the city encompassed by your request is %f\n", height);
-
-    return difficulty;
+	return difficulty;
 
 }
 
-// Bonus: Function for asking user input
-double askForUserInput() {
+// Function for calculating perimeter
+double calculatePerimeter() {
+    
+    double x1, x2, y1, y2;
+	double difficulty = 4.0;
+	int distance = askForUserInput();
 
-    int use_input = 1;
+	// not yet done
+	int perimeter = 2 * (distance + distance);
+	printf("The perimeter of the city encompassed by your request is %d\n", perimeter);
 
-    return use_input;
+	return difficulty;
+}
 
+// Function for calculating area
+double calculateArea() {
+
+    double x1, x2, y1, y2;
+	double difficulty = 4.0;
+	int distance = askForUserInput();
+
+	// line 3
+	int area = pow(distance, 2);
+	printf("The area of the city encompassed by your request is %d\n", area);
+
+	return difficulty;
+}
+
+
+
+// Function for calculating width
+int main(int argc, char **argv) {
+
+	calculateDistance();
+	calculatePerimeter();
+	calculateArea();
+	calculateWidth();
+	calculateHeight();
+
+	return 0;
 }
