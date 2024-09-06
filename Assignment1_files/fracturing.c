@@ -11,6 +11,7 @@
 // Output: Three lines of output representing the values and
 // calculation made in the function.
 // //********************************************************
+
 #include <stdio.h>
 #include <math.h>
 
