@@ -11,7 +11,6 @@
 // Output: Three lines of output representing the values and
 // calculation made in the function.
 // //********************************************************
-
 #include <stdio.h>
 #include <math.h>
 
@@ -35,102 +34,118 @@ double askForUserInput() {
 	printf("Input value for y2: ");
 	scanf("%lf", &y2);
 
-    // Prints the first line 
-	printf("Point #1 entered: x1 = %lf y1 = %lf \n", x1, y1);
+    // Prints the first line.
+	printf("Point #1 entered: x1 = %.3lf y1 = %.3lf\n", x1, y1);
 
-	// Scanf and printf statements for point #2
-	printf("Point #2 entered: x2 = %lf y2 = %lf \n", x2, y2);
+	// Scanf and printf statements for point #2.
+	printf("Point #2 entered: x2 = %.3lf y2 = %.3lf\n", x2, y2);
 	
+	// calculates the user input into distance.
+	// Calculation made separately so it could be used for other functions.
 	double user_input = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
-
+    
+    // returns the calculated value to be used by other functions.
 	return user_input;
-
 }
 
-// Function for calculating distance
+// Function for calculating distance.
 double calculateDistance() {
 
-	// Point #1 variables
+	// State variables.
 	double x1, x2, y1, y2;
-
+    
+    // calls helper function.
 	double distance = askForUserInput();
 
-	// Define Distance variable and print statement for distance.
-	printf("The distance between the two points is %f\n", distance);
-
+	// Print statement for distance.
+	// \n\n added to make the output easier to read.
+	// %.3lf round to 3 decimal spaces.
+	printf("The distance between the two points is %.3lf\n\n", distance);
+    
+    // Returns double equal to distance.
 	return distance;
 }
 
-
-
-// Function for calculating Width
+// Function for calculating Width.
 double calculateWidth() {
 
-
+    // State variables.
     double x1, x2, y1, y2;
     
+    // State difficulty variable.
 	double difficulty = 4.0;
+	
+	// call the function.
 	double distance = askForUserInput();
 
-	// line 3
-	int width = distance;
-	printf("The width of the city encompassed by your request is %d\n", width);
-
+	// Set width equal to distance and print width.
+	double width = distance;
+	printf("The width of the city encompassed by your request is %.3lf\n\n", width);
 
 	return difficulty;
-
 }
 
 // Function for calculating height
 double calculateHeight() {
 
-
+    // state variables.
     double x1, x2, y1, y2;
-
+    
+    // State difficulty variable.
 	double difficulty = 4.0;
+	
+	// Call the function.
 	double distance = askForUserInput();
 
-	// line 3
-	int height = distance;
-	printf("The height of the city encompassed by your request is %d\n", height);
-
+	// Set height equal to distance and print height.
+	double height = distance;
+	printf("The height of the city encompassed by your request is %.3lf\n\n", height);
+    
 	return difficulty;
-
 }
 
 // Function for calculating perimeter
 double calculatePerimeter() {
     
+    // State variable.
     double x1, x2, y1, y2;
+    
+    // State difficulty variable.
 	double difficulty = 4.0;
-	int distance = askForUserInput();
+	
+	// Call the function.
+	double distance = askForUserInput();
 
-	// not yet done
-	int perimeter = 2 * (distance + distance);
-	printf("The perimeter of the city encompassed by your request is %d\n", perimeter);
-
+	// Calculate and print perimeter.
+	double perimeter = 2 * (distance + distance);
+	printf("The perimeter of the city encompassed by your request is %.3lf\n\n", perimeter);
+    
 	return difficulty;
 }
 
 // Function for calculating area
 double calculateArea() {
 
+    // State variable.
     double x1, x2, y1, y2;
+    
+    // State difficulty variable.
 	double difficulty = 4.0;
-	int distance = askForUserInput();
+	
+	// Call the function.
+	double distance = askForUserInput();
 
-	// line 3
-	int area = pow(distance, 2);
-	printf("The area of the city encompassed by your request is %d\n", area);
-
+	// Calculate and print area.
+	double area = pow(distance, 2);
+	printf("The area of the city encompassed by your request is %.3lf\n\n", area);
+    
 	return difficulty;
 }
 
-
-
 // Function for calculating width
 int main(int argc, char **argv) {
-
+    
+    // call functions in order
 	calculateDistance();
 	calculatePerimeter();
 	calculateArea();
