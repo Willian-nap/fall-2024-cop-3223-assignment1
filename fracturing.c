@@ -43,10 +43,10 @@ double askForUserInput() {
 	
 	// calculates the user input into distance.
 	// Calculation made separately so it could be used for other functions.
-	
-    
+	double user_input = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+
     // returns the calculated value to be used by other functions.
-	return ;
+	return user_input;
 }
 
 // Function for calculating distance.
