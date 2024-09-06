@@ -46,7 +46,7 @@ double askForUserInput() {
 	
     
     // returns the calculated value to be used by other functions.
-	return user_input;
+	return ;
 }
 
 // Function for calculating distance.
